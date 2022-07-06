@@ -82,7 +82,7 @@ public class ServiceExecutor {
         System.out.println("2: Nom");
         System.out.println("3: Nom et Prénom");
         int tempchoix = sc.nextInt();
-        while(tempchoix > 3 || tempchoix < 1){
+        while(tempchoix > 3 || tempchoix < 1) {
             System.out.println("Choix invalide ! Recommencez !");
             System.out.println("Que voulez vous changer ?");
             System.out.println("1: Prénom");
@@ -90,6 +90,32 @@ public class ServiceExecutor {
             System.out.println("3: Nom et Prénom");
             tempchoix = sc.nextInt();
         }
-    }
+            if(tempchoix == 1){
+                System.out.println("Quel l'id de l'étudiant auquel vous souhaitez changer le prénom ?");
+                int id = sc.nextInt();
+                System.out.println("Par quel prénom souhaitez-vous changer ?");
+                sc.nextLine();
+                String tempprenom = sc.nextLine();
+                filiere.changeprenom(id, tempprenom);
 
+            }if(tempchoix == 2){
+                System.out.println("Quel l'id de l'étudiant auquel vous souhaitez changer le nom ?");
+                int id = sc.nextInt();
+                System.out.println("Par quel nom souhaitez-vous changer ?");
+            sc.nextLine();
+                String tempnom = sc.nextLine();
+                filiere.changenom(id, tempnom);
+
+            }if(tempchoix == 3) {
+                System.out.println("Quel l'id de l'étudiant auquel vous souhaitez changer le nom et prénom ?");
+                int id = sc.nextInt();
+                System.out.println("Par quel nom souhaitez-vous changer son nom?");
+                sc.nextLine();
+                String tempnom = sc.nextLine();
+                System.out.println("Par quel prénom souhaitez-vous changer son prénom ?");
+                String tempprenom = sc.nextLine();
+                filiere.changeprenomnom(id, tempnom, tempprenom);
+
+        }
+    }
 }

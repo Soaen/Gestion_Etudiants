@@ -51,4 +51,49 @@ public class DatabaseManagment {
             e.printStackTrace();
         }
     }
+    public static void changeDataPrenom(int id, String prenom){
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection conn = DriverManager.getConnection(
+                    Objects.requireNonNull(getDBInfo("DB_URL")),
+                    Objects.requireNonNull(getDBInfo("DB_USER")),
+                    Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("UPDATE etudiant SET prenomEtud = '" + prenom + "' WHERE numEtud = " + id);
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void changeDatanom(int id, String nom){
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection conn = DriverManager.getConnection(
+                    Objects.requireNonNull(getDBInfo("DB_URL")),
+                    Objects.requireNonNull(getDBInfo("DB_USER")),
+                    Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("UPDATE etudiant SET nomEtud = '" + nom + "' WHERE numEtud = " + id);
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void changeDatanomprenom(int id, String nom, String prenom){
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection conn = DriverManager.getConnection(
+                    Objects.requireNonNull(getDBInfo("DB_URL")),
+                    Objects.requireNonNull(getDBInfo("DB_USER")),
+                    Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("UPDATE etudiant SET nomEtud = '" + nom + "' WHERE numEtud = " + id);
+            stmt.executeUpdate("UPDATE etudiant SET prenomEtud = '" + prenom + "' WHERE numEtud = " + id);
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
