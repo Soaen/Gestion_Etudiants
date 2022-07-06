@@ -10,6 +10,7 @@ import java.util.Objects;
 import java.util.Properties;
 
 public class CreateDatabase {
+
     public static String getDBInfo(String s) {
         try (InputStream input = new FileInputStream("src/main/resources/config.properties")) {
             Properties prop = new Properties();
@@ -21,6 +22,8 @@ public class CreateDatabase {
         }
         return null;
     }
+
+
     public void createDatabase(){
         try
         {

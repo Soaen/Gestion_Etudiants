@@ -12,10 +12,10 @@ public class ServiceManagment {
                 se.askSearchFiliere();
                 break;
             case 3:
-                System.out.println("WIP");
+                se.showEtudiant();
                 break;
             case 4:
-                System.out.println("WIP");
+                se.replaceEtud();
                 break;
             case 5:
                 System.out.println("WIP");

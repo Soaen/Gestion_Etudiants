@@ -14,7 +14,7 @@ public class ServiceMenu {
             System.out.println("|                                                               |");
             System.out.println("|     2. Afficher les étudiants d'une filière                   |");
             System.out.println("|                                                               |");
-            System.out.println("|     3. Recherche de chambre par nombre de personnes           |");
+            System.out.println("|     3. Afficher tous les étudiants                            |");
             System.out.println("|                                                               |");
             System.out.println("|     4. Rechercher par prix maximum                            |");
             System.out.println("|                                                               |");
