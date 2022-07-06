@@ -30,7 +30,9 @@ public class CreateDatabase {
                     Objects.requireNonNull(getDBInfo("DB_USER")),
                     Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
             Statement stmt = conn.createStatement();
-            stmt.executeUpdate("create table etudiant(numEtud numeric,nomEtud VARCHAR(255),prenomEtud VARCHAR(255),filiereEtud VARCHAR(255));");
+            stmt.executeUpdate("DROP TABLE etudiant");
+            stmt.executeUpdate("DROP TABLE filiere");
+            stmt.executeUpdate("create table etudiant(numEtud numeric,nomEtud VARCHAR(255),prenomEtud VARCHAR(255),filiereEtud NUMERIC);");
             stmt.executeUpdate("create table filiere(numFiliere numeric,nomFiliere VARCHAR(255));");
             System.out.println("Base de données créer !");
             System.out.println("Implémentation des étudiants et filières en cours...");
@@ -44,7 +46,7 @@ public class CreateDatabase {
                     " (7,'Weeknd','The',2)," +
                     " (8,'Lexploratrice','Dora',1);");
             System.out.println("Étudiants implémenté !");
-            stmt.executeUpdate("INSERT INTO etudiant (numFiliere, nomFiliere) values" +
+            stmt.executeUpdate("INSERT INTO filiere (numFiliere, nomFiliere) values" +
                     " (1,'Électronique')," +
                     " (2,'Informatique');");
             System.out.println("Filières implémenté !");

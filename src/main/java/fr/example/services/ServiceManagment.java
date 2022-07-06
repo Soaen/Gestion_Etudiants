@@ -9,7 +9,7 @@ public class ServiceManagment {
                 cdb.createDatabase();
                 break;
             case 2:
-                System.out.println("WIP");
+                se.askSearchFiliere();
                 break;
             case 3:
                 System.out.println("WIP");
