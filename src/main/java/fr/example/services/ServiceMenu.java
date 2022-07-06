@@ -16,17 +16,19 @@ public class ServiceMenu {
             System.out.println("|                                                               |");
             System.out.println("|     3. Afficher tous les étudiants                            |");
             System.out.println("|                                                               |");
-            System.out.println("|     4. Rechercher par prix maximum                            |");
+            System.out.println("|     4. Changer le prénom ou le nom d'un étudiant              |");
             System.out.println("|                                                               |");
-            System.out.println("|     5. Ajouter une chambre                                    |");
+            System.out.println("|     5. Ajouter un étudiant                                    |");
             System.out.println("|                                                               |");
-            System.out.println("|     6. Quitter le programme                                   |");
+            System.out.println("|     6. Supprimé un étudiant                                   |");
+            System.out.println("|                                                               |");
+            System.out.println("|     7. Quitter le programme                                   |");
             System.out.println("|                                                               |");
             System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
             System.out.println("Entrez votre choix : ");
             choix = sc.nextInt();
             sc.nextLine();
             sm.firstMenu(choix);
-        }while(choix != 6);
+        }while(choix != 7);
     }
 }

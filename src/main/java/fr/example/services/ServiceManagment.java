@@ -18,13 +18,16 @@ public class ServiceManagment {
                 se.replaceEtud();
                 break;
             case 5:
-                System.out.println("WIP");
+                se.addEtud();
                 break;
             case 6:
+                se.removeEtud();
+                break;
+            case 7:
                 System.out.println("Au revoir !");
                 break;
             default:
-                System.out.println("Le nombre doit être compris entre 1 et 6 !");
+                System.out.println("Le nombre doit être compris entre 1 et 7 !");
         }
     }
 }

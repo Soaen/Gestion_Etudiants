@@ -96,4 +96,34 @@ public class DatabaseManagment {
             e.printStackTrace();
         }
     }
+
+    public static void addUser(int id, String nom, String prenom, int idfil){
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection conn = DriverManager.getConnection(
+                    Objects.requireNonNull(getDBInfo("DB_URL")),
+                    Objects.requireNonNull(getDBInfo("DB_USER")),
+                    Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("INSERT INTO etudiant VALUES(" + id + ",'" + nom + "','" + prenom + "'," + idfil+");");
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void removeUser(int id){
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection conn = DriverManager.getConnection(
+                    Objects.requireNonNull(getDBInfo("DB_URL")),
+                    Objects.requireNonNull(getDBInfo("DB_USER")),
+                    Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("DELETE FROM etudiant WHERE numEtud = " + id);
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

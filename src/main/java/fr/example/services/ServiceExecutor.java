@@ -96,7 +96,7 @@ public class ServiceExecutor {
                 System.out.println("Par quel prénom souhaitez-vous changer ?");
                 sc.nextLine();
                 String tempprenom = sc.nextLine();
-                filiere.changeprenom(id, tempprenom);
+                filiere.changePrenom(id, tempprenom);
 
             }if(tempchoix == 2){
                 System.out.println("Quel l'id de l'étudiant auquel vous souhaitez changer le nom ?");
@@ -104,7 +104,7 @@ public class ServiceExecutor {
                 System.out.println("Par quel nom souhaitez-vous changer ?");
             sc.nextLine();
                 String tempnom = sc.nextLine();
-                filiere.changenom(id, tempnom);
+                filiere.changeNom(id, tempnom);
 
             }if(tempchoix == 3) {
                 System.out.println("Quel l'id de l'étudiant auquel vous souhaitez changer le nom et prénom ?");
@@ -114,8 +114,27 @@ public class ServiceExecutor {
                 String tempnom = sc.nextLine();
                 System.out.println("Par quel prénom souhaitez-vous changer son prénom ?");
                 String tempprenom = sc.nextLine();
-                filiere.changeprenomnom(id, tempnom, tempprenom);
-
+                filiere.changePrenomNom(id, tempnom, tempprenom);
         }
+    }
+
+
+    public void addEtud(){
+        System.out.println("Quel est le prénom de l'étudiant que vous souhaitez ajouter ?");
+        String prenomtemp = sc.nextLine();
+        System.out.println("Quel est le nom de l'étudiant que vous souhaitez ajouter ?");
+        String nomtemp = sc.nextLine();
+        showFiliere();
+        System.out.println("Dans quel filière voulez vous l'ajouter ?");
+        int filitemp = sc.nextInt();
+        System.out.println("Quel ID l'étudiant vas avoir ?");
+        int idtemp = sc.nextInt();
+        filiere.addEtudiant(idtemp, nomtemp, prenomtemp, filitemp);
+    }
+
+    public void removeEtud(){
+        System.out.println("Quel est l'ID de l'étudiant à supprimer ?");
+        int idtemp = sc.nextInt();
+        filiere.removeEtudiant(idtemp);
     }
 }
