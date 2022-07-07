@@ -5,7 +5,7 @@ import java.util.Properties;
 
 public class HidePassword {
     static String yourFile = "src/main/resources/config.properties";
-    static String yourContent = "DB_URL=jdbc:postgresql://localhost/\n#Default DB_URL: jdbc:postgresql://localhost/\nDB_USER=postgres\n#Default DB_USER: postgres\nDB_PASSWORD=admin\n#Default DB_PASSWORD: admin";
+    static String yourContent = "DB_URL=jdbc:postgresql://localhost/\n#Default DB_URL: jdbc:postgresql://localhost/\n\nDB_USER=postgres\n#Default DB_USER: postgres\n\nDB_PASSWORD=admin\n#Default DB_PASSWORD: admin";
 
     static File tmpDir = new File(yourFile);
     static boolean exists = tmpDir.exists();
