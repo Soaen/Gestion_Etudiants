@@ -9,19 +9,9 @@ import java.sql.Statement;
 import java.util.Objects;
 import java.util.Properties;
 
-public class CreateDatabase {
+import static fr.example.services.HidePassword.getDBInfo;
 
-    public static String getDBInfo(String s) {
-        try (InputStream input = new FileInputStream("src/main/resources/config.properties")) {
-            Properties prop = new Properties();
-            prop.load(input);
-            if (prop.getProperty(s) == null) {System.out.println("La valeur " + s + " n'existe pas !");}
-            return prop.getProperty(s);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        return null;
-    }
+public class CreateDatabase {
 
 
     public void createDatabase(){

@@ -9,8 +9,8 @@ import java.sql.Statement;
 import java.util.Objects;
 import java.util.Scanner;
 
-import static fr.example.services.CreateDatabase.getDBInfo;
 import static fr.example.services.DatabaseManagment.filiere;
+import static fr.example.services.HidePassword.getDBInfo;
 
 public class ServiceExecutor {
     Scanner sc = new Scanner(System.in);
